@@ -8,7 +8,7 @@ void main() {
 
   generate();
 
-  generateFromList;
+  generateFromList();
 
   generateFromBuilder();
 

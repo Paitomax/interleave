@@ -67,6 +67,7 @@ final interleavedList = Interleave(
 print('list: $interleavedList'); // list: [a0, a1, a2, b0, a3, a4, b1, a5, a6, b2, a7, a8, a9]
 
 ```
+<br>
 
 Get item from index, calling `item` method:
 
@@ -90,8 +91,9 @@ final item = Interleave(
 print('item: $item'); // item: b0
 
 ```
+<br>
 
-`Interleave.generateFromBuilder`:
+`Interleave.generateFromList`:
 
 ```dart
 
@@ -104,9 +106,34 @@ final interleavedList = Interleave.generateFromList(
   itemList: list,
   interleavingList: anotherList,
 );
+print('list: $interleavedList'); // list: [0, 1, 2, 0, 3, 4, 1, 5, 6, 2, 7, 8, 9]
+
+```
+<br>
+
+`Interleave.generateFromBuilder`:
+
+```dart
+
+final list = List.generate(10, (index) => index);
+final anotherList = List.generate(3, (index) => index);
+
+final interleavedList = Interleave.generateFromBuilder(
+  step: 2,
+  offset: 3,
+  itemLength: list.length,
+  interleavingItemLength: anotherList.length,
+  itemBuilder: (interleaveIndex, listIndex) {
+    return 'a${list[interleaveIndex]}';
+  },
+  interleavingItemBuilder: (interleaveIndex, listIndex) {
+    return 'b${anotherList[interleaveIndex]}';
+  },
+);
 print('list: $interleavedList'); // list: [a0, a1, a2, b0, a3, a4, b1, a5, a6, b2, a7, a8, a9]
 
 ```
+<br>
 
 `Interleave.itemFromList`:
 
@@ -125,6 +152,7 @@ final item = Interleave.itemFromList(
 print('item: $item'); // 0
 
 ```
+<br>
 
 `Interleave.itemFromBuilder`:
 
