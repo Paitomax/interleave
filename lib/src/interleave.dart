@@ -139,7 +139,7 @@ class Interleave<T> {
 
   /// Get item from index of a interleaved list
   T item(int index) {
-    if (index > length || index < 0) {
+    if (index >= length || index < 0) {
       throw RangeError.range(index, 0, length - 1);
     }
 
