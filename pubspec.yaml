@@ -1,6 +1,6 @@
 name: interleave
 description: A library that helps to interleave lists, being possible to personalize the steps and offset.
-version: 0.0.1
+version: 0.1.0
 repository: https://github.com/Paitomax/interleave
 
 environment:
