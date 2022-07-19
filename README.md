@@ -13,7 +13,7 @@ A library that helps to interleave lists, being possible to personalize the step
 
 ```yaml
 # add this line to your dependencies
-interleave: ^0.0.1
+interleave: ^0.1.0
 ```
 
 ```dart
