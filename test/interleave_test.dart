@@ -248,4 +248,79 @@ void main() {
           () => interleave.item(interleave.length), throwsA(isA<RangeError>()));
     });
   });
+
+  group('generateFromList', () {
+    test('should generate a interleaved list from two lists', () {
+      expect(
+        Interleave.generateFromList(
+          step: 1,
+          itemList: ['a0', 'a1', 'a2'],
+          interleavingList: ['b0', 'b1', 'b2'],
+        ),
+        ['a0', 'b0', 'a1', 'b1', 'a2', 'b2'],
+      );
+    });
+  });
+
+  group('itemFromList', () {
+    test('should return a interleavingList item from index passing two lists',
+        () {
+      expect(
+        Interleave.itemFromList(
+          step: 1,
+          itemList: ['a0', 'a1', 'a2'],
+          interleavingList: ['b0', 'b1', 'b2'],
+          index: 1,
+        ),
+        'b0',
+      );
+    });
+
+    test('should return a itemList item from index passing two lists', () {
+      expect(
+        Interleave.itemFromList(
+          step: 1,
+          itemList: ['a0', 'a1', 'a2'],
+          interleavingList: ['b0', 'b1', 'b2'],
+          index: 2,
+        ),
+        'a1',
+      );
+    });
+  });
+
+  group('generateFromBuilder', () {
+    test('should generate a interleaved list from two item builders', () {
+      expect(
+        Interleave.generateFromBuilder(
+          step: 1,
+          itemLength: 3,
+          interleavingItemLength: 3,
+          itemBuilder: (interleaveIndex, listIndex) => 'a$interleaveIndex',
+          interleavingItemBuilder: (interleaveIndex, listIndex) =>
+              'b$interleaveIndex',
+        ),
+        ['a0', 'b0', 'a1', 'b1', 'a2', 'b2'],
+      );
+    });
+  });
+
+  group('itemFromBuilder', () {
+    test(
+        'should return a interleaved item from index passing two item builders',
+        () {
+      expect(
+        Interleave.itemFromBuilder(
+          step: 1,
+          itemLength: 3,
+          interleavingItemLength: 3,
+          itemBuilder: (interleaveIndex, listIndex) => 'a$interleaveIndex',
+          interleavingItemBuilder: (interleaveIndex, listIndex) =>
+              'b$interleaveIndex',
+          index: 1,
+        ),
+        'b0',
+      );
+    });
+  });
 }
