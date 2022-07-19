@@ -4,6 +4,7 @@
 
 # Conventional directory for build outputs.
 build/
+coverage/
 
 # IntelliJ related
 *.iml
