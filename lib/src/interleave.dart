@@ -1,8 +1,10 @@
+/// Interleave build method for getting a item from index
 typedef InterleaveItemBuilder<T> = T Function(
   int interleaveIndex,
   int listIndex,
 );
 
+/// Interleave class for generating a interleaved list
 class Interleave<T> {
   /// Steps to interleaving items.
   final int step;
@@ -36,6 +38,7 @@ class Interleave<T> {
   /// Items quantity (items + interleavingItems) that can be showed interleaving
   int get _maxItemsInterleaved => itemLength + _maxInterleavingItems;
 
+  /// Interleave default constructor
   const Interleave({
     required int step,
     int? offset,
@@ -72,7 +75,7 @@ class Interleave<T> {
             interleavingList[interleaveIndex],
       ).generate(growable: growable);
 
-  // Generate interleaved list from builders
+  /// Generate interleaved list from builders
   static List<T> generateFromBuilder<T>({
     required int step,
     int? offset,
