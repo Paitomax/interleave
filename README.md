@@ -1,6 +1,13 @@
 # [Interleave](https://pub.dev/packages/interleave)
 
-Interleave your items easily.
+A library that helps to interleave lists, being possible to personalize the steps and offset.
+
+<a href="https://pub.dev/packages/interleave"><img src="https://img.shields.io/pub/v/interleave.svg" alt="Pub"></a>
+<a href="https://github.com/Paitomax/interleave/actions"><img src="https://github.com/Paitomax/interleave/workflows/interleave/badge.svg" alt="build"></a>
+<a href="https://codecov.io/gh/Paitomax/interleave"><img src="https://codecov.io/gh/Paitomax/interleave/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+
+---
 
 ## How to Use
 
